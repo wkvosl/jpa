@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="https://www.thymeleaf.org" 
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<h2>회원가입</h2>
+
+<form th:action="@{/addmember}" method="post">
+아이디:<input type="text" name="username">
+비 번: <input type="password" name="password">
+<input type="submit" value="회원가입">
+</form>
+
+</body>
+</html>
