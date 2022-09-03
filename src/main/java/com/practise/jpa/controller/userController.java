@@ -1,29 +1,34 @@
 package com.practise.jpa.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
-import com.practise.jpa.repository.userRepository;
+import com.practise.jpa.entity.UserEntity;
+import com.practise.jpa.service.userService;
 
-@RestController
+@Controller
 public class userController {
 
 	@Autowired
-	private userRepository userRepository;
+	private userService userService;
 	
 	@GetMapping({"/","/home"})
-	public String home() {
+	public String homeForm() {
 		return "home";
 	}
-	@PostMapping("/addmember")
-	public String addmember(
-			) {
-		
-		
+
+	@GetMapping("/addmember")
+	public String joinForm() {
 		return "addmember";
 	}
+	
+	@PostMapping("/addmember")
+	public String addmember(UserEntity user) {
+		userService.createUser(user);
+		return "redirect:/";
+	}
+	
 	
 }
