@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="https://www.thymeleaf.org" 
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h2>글쓰기</h2>
+
+	<form th:action="@{board/write}" method="post">
+		<table>
+			<tr>
+				<th>순번</th>
+				<td><input name="b_num"></td>
+			</tr>	
+			<tr>
+				<th>제목</th>
+				<td><input name="b_title"></td>
+			</tr>
+			<tr>
+				<th>작성자</th>
+				<td><input name="b_username"></td>
+			</tr>
+			<tr>
+				<th>작성일</th>
+				<td><input name="b_writedate"></td>
+			</tr>
+			<tr>
+				<th>조회수</th>
+				<td><input name="b_hit"></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>
